@@ -24,5 +24,6 @@ Route::prefix('/admin-panel')
             ->group(function () {
                 Route::get('/', 'index')->name('index');
                 Route::get('/edit', 'edit')->name('edit');
+                Route::put('/update/{setting}', 'update')->name('update');
             });
     });
