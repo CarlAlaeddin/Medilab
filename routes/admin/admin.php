@@ -23,5 +23,6 @@ Route::prefix('/admin-panel')
             ->controller(SettingController::class)
             ->group(function () {
                 Route::get('/', 'index')->name('index');
+                Route::get('/edit', 'edit')->name('edit');
             });
     });
