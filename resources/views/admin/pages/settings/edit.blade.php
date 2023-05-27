@@ -14,8 +14,9 @@
 @section('content')
 <!-- Content Row -->
 <div class="row">
+    @include('admin\sections\error')
     <div class="col-md-12">
-        <form action="{{ route('admin.setting.update',['setting' => $setting->id]) }}" method="post">
+        <form action="{{ route('admin.setting.update',['setting' => $setting->id]) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -68,7 +69,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="telegram">telegram</label>
-                    <input type="text" name="instagram" id="telegram" class="form-control" value="{{ $setting->telegram }}">
+                    <input type="text" name="telegram" id="telegram" class="form-control" value="{{ $setting->telegram }}">
                 </div>
             </div>
 
@@ -176,8 +177,8 @@
                 </div>
 
                 <div class="col-md-12">
-                    <label for="service_description">service_description</label>
-                    <textarea name="service_description" id="service_description" cols="30" rows="3" class="form-control">{{ $setting->appointment_description }}</textarea>
+                    <label for="appointment_description">appointment_description</label>
+                    <textarea name="appointment_description" id="appointment_description" cols="30" rows="3" class="form-control">{{ $setting->appointment_description }}</textarea>
                 </div>
             </div>
 
