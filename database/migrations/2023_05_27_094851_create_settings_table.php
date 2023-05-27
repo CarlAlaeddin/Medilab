@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone_number');
             $table->string('address');
-            $table->string('phone_number');
 
             // socials
             $table->string('twitter');
