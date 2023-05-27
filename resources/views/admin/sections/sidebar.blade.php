@@ -36,7 +36,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page :</h6>
-                <a class="collapse-item" href="">Hero Section</a>
+                <a class="collapse-item" href="{{ route('admin.setting.edit') }}">Page Setting</a>
                 <a class="collapse-item" href="">Why us</a>`
             </div>
         </div>
