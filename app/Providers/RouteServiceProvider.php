@@ -35,6 +35,14 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            #____ This root belongs to the home
+            Route::middleware('web')
+                ->group(base_path('routes/home/home.php'));
+
+            #____ This root belongs to the admin panel
+            Route::middleware('web')
+                ->group(base_path('routes/admin/admin.php'));
         });
     }
 }
