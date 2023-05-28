@@ -35,6 +35,12 @@ return new class extends Migration
             $table->string('hero_button_text');
             $table->string('hero_button_src');
 
+            // Why Choose
+            $table->string('why_choose_title');
+            $table->text('why_choose_description');
+            $table->string('why_choose_button_text');
+            $table->string('why_choose_button_src');
+
             // why us
             $table->string('why_us_image');
             $table->string('why_us_title');
