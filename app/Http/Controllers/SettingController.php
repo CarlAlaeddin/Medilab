@@ -4,61 +4,53 @@ namespace App\Http\Controllers;
 
 use App\Models\Setting;
 use Illuminate\Http\Request;
-use App\Http\Requests\SettingRequest;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\File;
+use App\Http\Requests\SettingRequest;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Contracts\View\Factory;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class SettingController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
+
 
     /**
-     * Show the form for creating a new resource.
+     * Summary of edit
+     * @return Factory|View
      */
-    public function create()
-    {
-        return view('admin.pages.settings.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit()
+    public function edit(): Factory|View
     {
         $setting = Setting::first();
         return view('admin.pages.settings.edit', compact('setting'));
     }
 
+    
     /**
-     * Update the specified resource in storage.
+     * Summary of update
+     * @param \App\Http\Requests\SettingRequest $settingRequest
+     * @param \App\Models\Setting $setting
+     * @return RedirectResponse|mixed
      */
     public function update(SettingRequest $settingRequest, Setting $setting)
     {
+        #_____________ upload and unlink why_us_image
+        if (!is_null($settingRequest->why_us_image)) {
+
+            if (file_exists(public_path('/upload/setting/' . $setting->why_us_image))) {
+                unlink(public_path('upload/setting/' . $setting->why_us_image));
+            }
+
+            $imageFile = $settingRequest->file('why_us_image');
+            $imageFileName = generateFileName($settingRequest->why_us_image->getClientOriginalExtension());
+            $setting->why_us_image = $imageFileName;
+
+            $imageFile->move(public_path('upload/setting/'), $imageFileName);
+        }
+
+        #_____________ update
 
         $setting->update([
-            'why_us_image'             =>   $settingRequest->why_us_image,
             'logo'                     =>   $settingRequest->logo,
             'email'                    =>   $settingRequest->email,
             'phone_number'             =>   $settingRequest->phone_number,
@@ -97,18 +89,9 @@ class SettingController extends Controller
             'footer_description'       =>   $settingRequest->footer_description,
             'author'                   =>   $settingRequest->author,
         ]);
-        $settingRequest->why_us_image->move('/upload/pages/' , $why_us_image_name);
 
         $setting->update();
-        Alert::success('title', 'edit page successfully');
+        Alert::success('Success Report', 'The home page was edited correctly');
         return redirect()->back();
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
     }
 }
