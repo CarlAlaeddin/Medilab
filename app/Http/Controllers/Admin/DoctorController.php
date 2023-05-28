@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreDoctorRequest;
 use App\Http\Requests\UpdateDoctorRequest;
+use App\Models\PositionDoctor;
 
 class DoctorController extends Controller
 {
@@ -24,7 +25,8 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('admin.pages.doctor.create');
+        $positions = PositionDoctor::query()->orderBy('id', 'DESC')->where('is_active', '!=', 0)->get();
+        return view('admin.pages.doctor.create', compact('positions'));
     }
 
     /**
@@ -40,15 +42,15 @@ class DoctorController extends Controller
 
         #_______________________________ Create data
         Doctor::create([
-            'image'         =>  $imageFileName,
-            'name'          =>  $request->input('name'),
-            'position'      =>  $request->input('position'),
-            'biography'     =>  $request->input('biography'),
-            'is_active'     =>  $request->input('is_active'),
-            'linkedin'      =>  $request->input('linkedin'),
-            'twitter'       =>  $request->input('twitter'),
-            'facebook'      =>  $request->input('facebook'),
-            'instagram'     =>  $request->input('instagram'),
+            'position_doctor_id'    =>  $request->input('position_doctor_id'),
+            'image'                 =>  $imageFileName,
+            'name'                  =>  $request->input('name'),
+            'biography'             =>  $request->input('biography'),
+            'is_active'             =>  $request->input('is_active'),
+            'linkedin'              =>  $request->input('linkedin'),
+            'twitter'               =>  $request->input('twitter'),
+            'facebook'              =>  $request->input('facebook'),
+            'instagram'             =>  $request->input('instagram'),
         ]);
 
         $imageFile->move(public_path('upload/doctor/'), $imageFileName);
@@ -73,7 +75,8 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        return view('admin.pages.doctor.edit', compact('doctor'));
+        $positions = PositionDoctor::query()->orderBy('id', 'DESC')->where('is_active', '!=', 0)->get();
+        return view('admin.pages.doctor.edit', compact(['doctor','positions']));
     }
 
 
@@ -97,14 +100,14 @@ class DoctorController extends Controller
         }
         #_______________________________ Create data
         $doctor->update([
-            'name'          =>  $request->input('name'),
-            'position'      =>  $request->input('position'),
-            'biography'     =>  $request->input('biography'),
-            'is_active'     =>  $request->input('is_active'),
-            'linkedin'      =>  $request->input('linkedin'),
-            'twitter'       =>  $request->input('twitter'),
-            'facebook'      =>  $request->input('facebook'),
-            'instagram'     =>  $request->input('instagram'),
+            'position_doctor_id'    =>  $request->input('position_doctor_id'),
+            'name'                      =>  $request->input('name'),
+            'biography'                 =>  $request->input('biography'),
+            'is_active'                 =>  $request->input('is_active'),
+            'linkedin'                  =>  $request->input('linkedin'),
+            'twitter'                   =>  $request->input('twitter'),
+            'facebook'                  =>  $request->input('facebook'),
+            'instagram'                 =>  $request->input('instagram'),
         ]);
 
         #___________________________________ Alert success
