@@ -56,7 +56,7 @@
                     <select name="position_doctor_id" id="position" class="form-select form-control">
                         <option selected disabled>Select a status</option>
                         @foreach ($positions as $position)
-                            <option value="{{ $position->id }}" {{ $position->id === $doctor->position_doctor_id ? 'selected' : ''; }}>{{ $position->position }}</option>
+                            <option value="{{ $position->id }}" {{ $position->id === $doctor->position_doctor_id ? 'selected' : '' }}>{{ $position->position }}</option>
                         @endforeach
                     </select>
                 </div>
