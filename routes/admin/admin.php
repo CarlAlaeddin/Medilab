@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WhyUsController;
 use App\Http\Controllers\Admin\SettingController;
@@ -53,5 +54,18 @@ Route::prefix('/admin-panel/management')
                 Route::get('/edit/{whyChoose}', 'edit')->name('edit');
                 Route::put('/update/{whyChoose}', 'update')->name('update');
                 Route::delete('/destroy/{whyChoose}', 'destroy')->name('destroy');
+            });
+        #________ This root belongs to the why choose model
+        Route::prefix('/service')
+            ->name('service.')
+            ->controller(ServiceController::class)
+            ->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{service}', 'show')->name('show');
+                Route::get('/edit/{service}', 'edit')->name('edit');
+                Route::put('/update/{service}', 'update')->name('update');
+                Route::delete('/destroy/{service}', 'destroy')->name('destroy');
             });
     });
