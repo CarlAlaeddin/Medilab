@@ -11,5 +11,5 @@ function generateFileName($name)
     $second      =  Carbon::now()->second;
     $microsecond =  Carbon::now()->microsecond;
 
-    return  $year . '_' . $month . '_' . $day . '_' . $second . '_' . $microsecond . '_' . $name;
+    return  $year . '_' . $month . '_' . $day . '_' . $second . '_' . $microsecond . '.' . $name;
 }
