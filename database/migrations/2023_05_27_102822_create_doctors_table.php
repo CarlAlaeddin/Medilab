@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('position_id')->unsigned();
+            $table->foreignId('position_doctor_id')->unsigned();
             $table->string('image');
             $table->string('name');
             $table->text('biography');
@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->timestamps();
 
-            $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');
+            $table->foreign('position_doctor_id')->references('id')->on('position_doctor')->onDelete('cascade');
 
         });
     }
