@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\WhyUsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('/admin-panel')
+Route::prefix('/admin-panel/management')
     ->name('admin.')
     ->group(function () {
         #________ This root belongs to the settings site
@@ -25,5 +26,18 @@ Route::prefix('/admin-panel')
                 Route::get('/', 'index')->name('index');
                 Route::get('/edit', 'edit')->name('edit');
                 Route::put('/update/{setting}', 'update')->name('update');
+            });
+        #________ This root belongs to the why us model
+        Route::prefix('/why-us')
+            ->name('whyUs.')
+            ->controller(WhyUsController::class)
+            ->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{whyUs}', 'show')->name('show');
+                Route::get('/edit/{whyUs}', 'edit')->name('edit');
+                Route::put('/update/{whyUs}', 'update')->name('update');
+                Route::delete('/destroy/{whyUs}', 'destroy')->name('destroy');
             });
     });
