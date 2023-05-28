@@ -42,6 +42,9 @@
         </div>
     </li>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
     <!-- Nav Item - Pages Collapse why us -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWhyUs" aria-expanded="true"
@@ -56,6 +59,9 @@
             </div>
         </div>
     </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Nav Item - Pages Collapse why choose -->
     <li class="nav-item">
@@ -72,6 +78,23 @@
         </div>
     </li>
 
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Nav Item - Pages Collapse why choose -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsService" aria-expanded="true"
+                aria-controls="collapsService">
+                <i class="fas fa-fw fa-box"></i>
+                <span>Services</span>
+            </a>
+            <div id="collapsService" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{{ route('admin.service.index') }}">Show all</a>
+                    <a class="collapse-item" href="{{ route('admin.service.create') }}">Create new</a>
+                </div>
+            </div>
+        </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
