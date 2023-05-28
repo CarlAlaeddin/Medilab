@@ -53,12 +53,11 @@
 
                 <div class="form-group col-md-6">
                     <label for="position">position</label>
-                    <select name="position" id="position" class="form-select form-control">
+                    <select name="position_doctor_id" id="position" class="form-select form-control">
                         <option selected disabled>Select a status</option>
-                        <option value="General">General practitioner</option>
-                        <option value="specialist">specialist</option>
-                        <option value="Specialist">Specialist doctor</option>
-                        <option value="Professor">Professor</option>
+                        @foreach ($positions as $position)
+                            <option value="{{ $position->id }}">{{ $position->position }}</option>
+                        @endforeach
                     </select>
                 </div>
 

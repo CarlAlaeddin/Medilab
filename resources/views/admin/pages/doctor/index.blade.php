@@ -34,7 +34,7 @@
                         <img src="{{ url('/upload/doctor'.'/'. $item->image ) }}" alt="{{ $item->name }}" class="img-fluid rounded shadow" width="200" height="200">
                     </td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->position }}</td>
+                    <td>{{ $item->positionDoctor->position }}</td>
                     <td>
                         <p class="{{ $item->getRawOriginal('is_active') ? 'text-success' : 'text-danger' }}">
                             {{ $item->is_active }}
