@@ -95,14 +95,14 @@
             </div>
         </div>
     </li>
-
+    
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Nav Item - Pages Collapse why choose -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsDepartment" aria-expanded="true"
-            aria-controls="collapsDepartment">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsDepartment"
+            aria-expanded="true" aria-controls="collapsDepartment">
             <i class="fas fa-fw fa-box"></i>
             <span>Department</span>
         </a>
@@ -114,24 +114,35 @@
         </div>
     </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Nav Item - Pages Collapse why choose -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsPositionDoctor" aria-expanded="true"
-                aria-controls="collapsPositionDoctor">
-                <i class="fas fa-fw fa-box"></i>
-                <span>Position Doctor</span>
-            </a>
-            <div id="collapsPositionDoctor" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ route('admin.position.index') }}">Show all</a>
-                    <a class="collapse-item" href="{{ route('admin.position.create') }}">Create new</a>
-                </div>
+    <!-- Nav Item - Pages Collapse why choose -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsPositionDoctor"
+            aria-expanded="true" aria-controls="collapsPositionDoctor">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Position Doctor</span>
+        </a>
+        <div id="collapsPositionDoctor" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.position.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.position.create') }}">Create new</a>
             </div>
-        </li>
+        </div>
+    </li>
 
+    <!-- Nav Item - Pages Collapse why choose -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsDoctor" aria-expanded="true"
+            aria-controls="collapsDoctor">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Doctor</span>
+        </a>
+        <div id="collapsDoctor" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.doctor.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.doctor.create') }}">Create new</a>
+            </div>
+        </div>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
