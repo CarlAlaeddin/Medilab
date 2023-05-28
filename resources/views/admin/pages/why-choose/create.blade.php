@@ -28,7 +28,7 @@
 
                 <div class="form-group col-md-6">
                     <label for="title"> why choose title</label>
-                    <input type="text" name="title" id="title" class="form-control" value="{{ old('title ')}}">
+                    <input type="text" name="title" id="title" class="form-control" value="{{ old('title')}}">
                 </div>
 
                 <div class="form-group col-md-12">
