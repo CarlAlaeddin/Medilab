@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Medilab Bootstrap Template - Index</title>
+  <title>Medilab - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -44,14 +44,16 @@
   <div id="topbar" class="d-flex align-items-center fixed-top">
     <div class="container d-flex justify-content-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
-        <i class="bi bi-phone"></i> +1 5589 55488 55
+          <i class="bi bi-envelope"></i>
+          <a href="mailto:contact@example.com">{{ $option->email }}</a>
+          <i class="bi bi-phone"></i> {{ $option->phone_number }}
       </div>
       <div class="d-none d-lg-flex social-links align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="{{ $option->twitter }}" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="{{ $option->facebook }}" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="{{ $option->instagram }}" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="{{ $option->linkedin }}" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="{{ $option->telegram }}" class="linkedin"><i class="bi bi-telegram"></i></i></a>
       </div>
     </div>
   </div>
@@ -60,7 +62,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">{{ $option->logo }}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="home/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -101,9 +103,9 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
-      <h1>Welcome to Medilab</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      <h1>{{ $option->hero_title }}</h1>
+      <h2>{{ $option->hero_description }}</h2>
+      <a href="{{ $option->hero_button_src }}" class="btn-get-started scrollto">{{ $option->hero_button_text }}</a>
     </div>
   </section><!-- End Hero -->
 
@@ -116,13 +118,14 @@
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-              <h3>Why Choose Medilab?</h3>
+              <h3>{{ $option->why_choose_title }}</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                {{ $option->why_choose_description }}
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <a href="{{ $option->why_choose_button_src }}" class="more-btn">
+                  {{ $option->why_choose_button_text }}
+                  <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
           </div>
@@ -163,13 +166,13 @@
       <div class="container-fluid">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative">
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch position-relative" style="background: url({{ url('upload/setting/'.$option->why_us_image) }}) center center no-repeat;">
             <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox play-btn mb-4"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
-            <h3>Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+            <h3>{{ $option->why_us_title }}</h3>
+            <p>{{ $option->why_us_description }}</p>
 
             <div class="icon-box">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
@@ -243,8 +246,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->service_title }}</h2>
+          <p>{{ $option->service_description }}</p>
         </div>
 
         <div class="row">
@@ -306,8 +309,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Make an Appointment</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->appointment_title }}</h2>
+          <p>{{ $option->appointment_description }}</p>
         </div>
 
         <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
@@ -370,8 +373,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Departments</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->departments_title }}</h2>
+          <p>{{ $option->departments_description }}</p>
         </div>
 
         <div class="row gy-4">
@@ -468,8 +471,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Doctors</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->doctors_title }}</h2>
+          <p>{{ $option->doctors_description }}</p>
         </div>
 
         <div class="row">
@@ -552,8 +555,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->questions_title }}</h2>
+          <p>{{ $option->questions_description }}</p>
         </div>
 
         <div class="faq-list">
@@ -703,8 +706,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Gallery</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->gallery_title }}</h2>
+          <p>{{ $option->gallery_description }}</p>
         </div>
       </div>
 
@@ -785,8 +788,8 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>{{ $option->contact_title }}</h2>
+          <p>{{ $option->contact_description }}</p>
         </div>
       </div>
 
@@ -802,19 +805,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>{{ $option->address }}</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>{{ $option->email }}</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>{{ $option->phone_number }}</p>
               </div>
 
             </div>
@@ -865,11 +868,9 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Medilab</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              {{ $option->address }} <br>
+              <strong>Phone:</strong> {{ $option->phone_number }}<br>
+              <strong>Email:</strong> {{ $option->email }}<br>
             </p>
           </div>
 
@@ -897,7 +898,6 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -911,22 +911,22 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
+          {{ $option->footer_description }}
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="https://github.com/CarlAlaeddin">bootstrapmade & {{ $option->author }} </a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="{{ $option->twitter }}" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="{{ $option->facebook }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="{{ $option->telegram }}" class="telegram"><i class="bx bxl-telegram"></i></a>
+        <a href="{{ $option->instagram }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="{{ $option->linkedin }}" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
