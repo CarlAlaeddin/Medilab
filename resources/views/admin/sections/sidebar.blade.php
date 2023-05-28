@@ -42,21 +42,35 @@
         </div>
     </li>
 
-        <!-- Nav Item - Pages Collapse why us -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWhyUs" aria-expanded="true"
-                aria-controls="collapseWhyUs">
-                <i class="fas fa-fw fa-box"></i>
-                <span>Why us Box</span>
-            </a>
-            <div id="collapseWhyUs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ route('admin.whyUs.index') }}">Show all</a>
-                    <a class="collapse-item" href="{{ route('admin.whyUs.create') }}">Create new</a>
-                </div>
+    <!-- Nav Item - Pages Collapse why us -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWhyUs" aria-expanded="true"
+            aria-controls="collapseWhyUs">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Why us Box</span>
+        </a>
+        <div id="collapseWhyUs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.whyUs.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.whyUs.create') }}">Create new</a>
             </div>
-        </li>
-    
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse why choose -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWhyChoose" aria-expanded="true"
+            aria-controls="collapseWhyChoose">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Why Choose Box</span>
+        </a>
+        <div id="collapseWhyChoose" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.whyChoose.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.whyChoose.create') }}">Create new</a>
+            </div>
+        </div>
+    </li>
 
 
     <!-- Divider -->
