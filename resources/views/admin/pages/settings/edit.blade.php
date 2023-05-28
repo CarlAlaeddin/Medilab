@@ -104,17 +104,39 @@
 
             </div>
 
+
+
+            <h5>why choose</h5>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="why_choose_title">why_choose_title</label>
+                    <input type="text" name="why_choose_title" id="why_choose_title" class="form-control" value="{{ $setting->why_choose_title }}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="why_choose_button_text">why_choose_button_text</label>
+                    <input type="text" name="why_choose_button_text" id="why_choose_button_text" class="form-control" value="{{ $setting->why_choose_button_text }}">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label for="why_choose_button_src">why_choose_button_src</label>
+                    <input type="text" name="why_choose_button_src" id="why_choose_button_src" class="form-control" value="{{ $setting->why_choose_button_src }}">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="why_choose_description">why_choose_description</label>
+                    <textarea name="why_choose_description" id="why_choose_description" cols="30" rows="3" class="form-control">{{ $setting->why_choose_description }}</textarea>
+                </div>
+
+            </div>
+
+
             <hr>
             <h5>why us</h5>
             <div class="row">
                 <div class="col-md-6">
                     <label for="why_us_image">why_us_image</label>
                     <input type="file" name="why_us_image" id="why_us_image" class="form-control" value="{{ $setting->why_us_image }}">
-                </div>
-
-                <div class="form-group col-md-6">
-                    <label for="why_us_title">why_us_title</label>
-                    <input type="text" name="why_us_title" id="why_us_title" class="form-control" value="{{ $setting->why_us_title }}">
                 </div>
 
                 <div class="form-group col-md-6">
