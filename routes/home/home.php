@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Home\MedicalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('home.index');
-});
+Route::get('/',[MedicalController::class, 'index'])->name('index');
