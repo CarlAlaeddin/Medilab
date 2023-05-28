@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[MedicalController::class, 'index'])->name('index');
+
+// Route::post('/Appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
