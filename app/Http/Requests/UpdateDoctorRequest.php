@@ -22,15 +22,15 @@ class UpdateDoctorRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'image'         =>      ['nullable','mimes:png,jpg,webp,webm,jpeg'],
-            'name'          =>      ['required','min:3','string'],
-            'position'      =>      ['required','min:3','string'],
-            'biography'     =>      ['required','min:50'],
-            'is_active'     =>      ['required','boolean'],
-            'linkedin'      =>      ['nullable'],
-            'twitter'       =>      ['nullable'],
-            'facebook'      =>      ['nullable'],
-            'instagram'     =>      ['nullable'],
+            'position_doctor_id'        =>      ['required','integer'],
+            'image'                     =>      ['nullable','mimes:png,jpg,webp,webm,jpeg'],
+            'name'                      =>      ['required','min:3','string'],
+            'biography'                 =>      ['required','min:50'],
+            'is_active'                 =>      ['required','boolean'],
+            'linkedin'                  =>      ['nullable'],
+            'twitter'                   =>      ['nullable'],
+            'facebook'                  =>      ['nullable'],
+            'instagram'                 =>      ['nullable'],
         ];
     }
 }
