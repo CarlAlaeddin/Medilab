@@ -19,79 +19,6 @@
         </a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Nav Item - Pages Collapse Setting -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSetting"
-            aria-expanded="true" aria-controls="collapseSetting">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Settings</span>
-        </a>
-        <div id="collapseSetting" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Page :</h6>
-                <a class="collapse-item" href="{{ route('admin.setting.edit') }}">Page Setting</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Nav Item - Pages Collapse why choose -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsAppointment"
-            aria-expanded="true" aria-controls="collapsAppointment">
-            <i class="fas fa-fw fa-box"></i>
-            <span>Appointment</span>
-        </a>
-        <div id="collapsAppointment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.appointment.index') }}">Show all</a>
-            </div>
-        </div>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Nav Item - Pages Collapse why us -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWhyUs" aria-expanded="true"
-            aria-controls="collapseWhyUs">
-            <i class="fas fa-fw fa-box"></i>
-            <span>Why us Box</span>
-        </a>
-        <div id="collapseWhyUs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.whyUs.index') }}">Show all</a>
-                <a class="collapse-item" href="{{ route('admin.whyUs.create') }}">Create new</a>
-            </div>
-        </div>
-    </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Nav Item - Pages Collapse why us -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGallery" aria-expanded="true"
-                aria-controls="collapseGallery">
-                <i class="fas fa-fw fa-box"></i>
-                <span>Gallery</span>
-            </a>
-            <div id="collapseGallery" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ route('admin.gallery.index') }}">Show all</a>
-                    <a class="collapse-item" href="{{ route('admin.gallery.create') }}">Create new</a>
-                </div>
-            </div>
-        </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
 
     <!-- Nav Item - Pages Collapse why choose -->
     <li class="nav-item">
@@ -108,10 +35,26 @@
         </div>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Nav Item - Pages Collapse why choose -->
+    <!-- Nav Item - Pages Collapse why us -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseWhyUs" aria-expanded="true"
+            aria-controls="collapseWhyUs">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Why us Box</span>
+        </a>
+        <div id="collapseWhyUs" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.whyUs.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.whyUs.create') }}">Create new</a>
+            </div>
+        </div>
+    </li>
+
+
+
+
+    <!-- Nav Item - Pages Collapse Services -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsService" aria-expanded="true"
             aria-controls="collapsService">
@@ -126,10 +69,23 @@
         </div>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Nav Item - Pages Collapse why choose -->
+    <!-- Nav Item - Pages Collapse Appointment -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsAppointment"
+            aria-expanded="true" aria-controls="collapsAppointment">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Appointment</span>
+        </a>
+        <div id="collapsAppointment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.appointment.index') }}">Show all</a>
+            </div>
+        </div>
+    </li>
+
+
+    <!-- Nav Item - Pages Collapse Department  -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsDepartment"
             aria-expanded="true" aria-controls="collapsDepartment">
@@ -144,7 +100,7 @@
         </div>
     </li>
 
-    <!-- Nav Item - Pages Collapse why choose -->
+    <!-- Nav Item - Pages Collapse PositionDoctor -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsPositionDoctor"
             aria-expanded="true" aria-controls="collapsPositionDoctor">
@@ -158,8 +114,7 @@
             </div>
         </div>
     </li>
-
-    <!-- Nav Item - Pages Collapse why choose -->
+    <!-- Nav Item - Pages Collapse Doctor -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsDoctor" aria-expanded="true"
             aria-controls="collapsDoctor">
@@ -173,6 +128,71 @@
             </div>
         </div>
     </li>
+
+    <!-- Nav Item - Pages Collapse faq -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFaq" aria-expanded="true"
+            aria-controls="collapseFaq">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Faq</span>
+        </a>
+        <div id="collapseFaq" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.faq.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.faq.create') }}">Create new</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Pages Collapse Contact -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsContact" aria-expanded="true"
+            aria-controls="collapsContact">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Contact</span>
+        </a>
+        <div id="collapsContact" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.contact.index') }}">Show all</a>
+            </div>
+        </div>
+    </li>
+
+
+    <!-- Nav Item - Pages Collapse gallery -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseGallery"
+            aria-expanded="true" aria-controls="collapseGallery">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Gallery</span>
+        </a>
+        <div id="collapseGallery" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.gallery.index') }}">Show all</a>
+                <a class="collapse-item" href="{{ route('admin.gallery.create') }}">Create new</a>
+            </div>
+        </div>
+    </li>
+
+
+    <!-- Nav Item - Pages Collapse Setting -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSetting"
+            aria-expanded="true" aria-controls="collapseSetting">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Settings</span>
+        </a>
+        <div id="collapseSetting" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Page :</h6>
+                <a class="collapse-item" href="{{ route('admin.setting.edit') }}">Page Setting</a>
+            </div>
+        </div>
+    </li>
+
+
+
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
