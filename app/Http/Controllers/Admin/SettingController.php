@@ -47,10 +47,25 @@ class SettingController extends Controller
             $imageFile->move(public_path('upload/setting/'), $imageFileName);
         }
 
+        #_____________ upload and unlink why_us_image
+        if (!is_null($settingRequest->hero_image)) {
+
+            if (file_exists(public_path('/upload/setting/' . $setting->hero_image))) {
+                unlink(public_path('upload/setting/' . $setting->hero_image));
+            }
+
+            $imageFileHeroImage = $settingRequest->file('hero_image');
+            $imageFileNameHeroImage = generateFileName($settingRequest->hero_image->getClientOriginalExtension());
+            $setting->hero_image = $imageFileNameHeroImage;
+
+            $imageFileHeroImage->move(public_path('upload/setting/'), $imageFileNameHeroImage);
+        }
+
         #_____________ update
 
         $setting->update([
             'logo'                     =>   $settingRequest->logo,
+            'hero_image'               =>   $imageFileNameHeroImage,
             'email'                    =>   $settingRequest->email,
             'phone_number'             =>   $settingRequest->phone_number,
             'address'                  =>   $settingRequest->address,

@@ -40,6 +40,7 @@ class SettingRequest extends FormRequest
             'why_choose_button_text'   => ['required'],
             'why_choose_button_src'    => ['required'],
             'why_us_image'             => ['nullable'],
+            'hero_image'               => ['nullable'],
             'why_us_title'             => ['required'],
             'why_us_description'       => ['required'],
             'why_us_button_text'       => ['required'],

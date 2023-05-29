@@ -94,6 +94,10 @@
                             <label for="hero_button_src">hero_button_src</label>
                             <input type="text" name="hero_button_src" id="hero_button_src" class="form-control" value="{{ $setting->hero_button_src }}">
                         </div>
+                        <div class="col-md-12">
+                            <label for="hero_image">hero_image</label>
+                            <input type="file" name="hero_image" id="hero_image" class="form-control" value="{{ $setting->hero_image }}">
+                        </div>
                     </div>
                 </div>
 
