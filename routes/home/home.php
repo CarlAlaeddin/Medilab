@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\Home\MedicalController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home\MedicalController;
+use App\Http\Controllers\Home\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',[MedicalController::class, 'index'])->name('index');
 
-// Route::post('/Appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
+Route::post('/Appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
