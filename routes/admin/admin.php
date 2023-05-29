@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\WhyChooseController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\PositionDoctorController;
 
 /*
@@ -112,6 +113,20 @@ Route::prefix('/admin-panel/management')
                 Route::get('/edit/{positionDoctor}', 'edit')->name('edit');
                 Route::put('/update/{positionDoctor}', 'update')->name('update');
                 Route::delete('/destroy/{positionDoctor}', 'destroy')->name('destroy');
+            });
+
+        #________ This root belongs to the department model
+        Route::prefix('/gallery')
+            ->name('gallery.')
+            ->controller(GalleryController::class)
+            ->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{gallery}', 'show')->name('show');
+                Route::get('/edit/{gallery}', 'edit')->name('edit');
+                Route::put('/update/{gallery}', 'update')->name('update');
+                Route::delete('/destroy/{gallery}', 'destroy')->name('destroy');
             });
         #________ This root belongs to the department model
         Route::prefix('/appointment')
