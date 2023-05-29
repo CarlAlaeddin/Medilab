@@ -26,10 +26,11 @@ use App\Http\Controllers\Admin\PositionDoctorController;
 */
 
 #________ This root belongs to the dashboard
-Route::get('/admin-panel/dashboard',[DashboardController::class,'index'])->name('dashboard');
+Route::get('/admin-panel/dashboard',[DashboardController::class,'index'])->middleware(['auth'])->name('dashboard');
 
 Route::prefix('/admin-panel/management')
     ->name('admin.')
+    ->middleware(['auth'])
     ->group(function () {
 
         #________ This root belongs to the settings site
