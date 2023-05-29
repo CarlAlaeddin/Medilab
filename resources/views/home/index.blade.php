@@ -313,41 +313,39 @@
           <p>{{ $option->appointment_description }}</p>
         </div>
 
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
+        <form action="{{ route('appointment.store') }}" method="post" role="form">
+          @csrf
+          @method('POST')
           <div class="row">
             <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-              <div class="validate"></div>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
-              <div class="validate"></div>
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email">
             </div>
             <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-              <div class="validate"></div>
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" >
             </div>
+
           </div>
           <div class="row">
             <div class="col-md-4 form-group mt-3">
-              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
-              <div class="validate"></div>
+              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" >
             </div>
             <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select">
-                <option value="">Select Department</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
+              <select name="department_id" id="department" class="form-select">
+                <option selected @disabled(true) >Select Department</option>
+                @foreach ($departments as $department)
+                  <option value="{{ $department->id }}">{{ $department->name }}</option>
+                @endforeach
               </select>
-              <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select">
+              <select name="doctor_id" id="doctor" class="form-select">
                 <option value="">Select Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
+                @foreach ($doctors as $doctor)
+                  <option value="{{ $doctor->id }}">{{ $doctor->name }} - {{ $doctor->positionDoctor->position}}</option>
+                @endforeach
               </select>
               <div class="validate"></div>
             </div>
@@ -355,16 +353,11 @@
 
           <div class="form-group mt-3">
             <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-            <div class="validate"></div>
           </div>
-          <div class="mb-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-md btn-outline-primary my-2">Make an Appointment</button>
           </div>
-          <div class="text-center"><button type="submit">Make an Appointment</button></div>
         </form>
-
       </div>
     </section><!-- End Appointment Section -->
 
@@ -939,11 +932,11 @@
   <script src="home/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="home/assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="home/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="home/assets/vendor/php-email-form/validate.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="home/assets/js/main.js"></script>
-
+    @include('sweetalert::alert')
 </body>
 
 </html>
