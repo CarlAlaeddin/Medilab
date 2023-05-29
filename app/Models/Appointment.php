@@ -22,4 +22,15 @@ class Appointment extends Model
     {
         return $is_active ? 'Active' : 'DeActive';
     }
+
+
+    public function department()
+    {
+        return $this->belongsTo(Department::class);
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
 }
