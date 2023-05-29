@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\WhyChooseController;
 use App\Http\Controllers\Admin\DepartmentController;
 use App\Http\Controllers\Admin\AppointmentController;
@@ -24,9 +25,13 @@ use App\Http\Controllers\Admin\PositionDoctorController;
 |
 */
 
+#________ This root belongs to the dashboard
+Route::get('/admin-panel/dashboard',[DashboardController::class,'index'])->name('dashboard');
+
 Route::prefix('/admin-panel/management')
     ->name('admin.')
     ->group(function () {
+
         #________ This root belongs to the settings site
         Route::prefix('/settings')
             ->name('setting.')
