@@ -22,11 +22,6 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Interface
-    </div>
-
     <!-- Nav Item - Pages Collapse Setting -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSetting"
@@ -38,6 +33,23 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Page :</h6>
                 <a class="collapse-item" href="{{ route('admin.setting.edit') }}">Page Setting</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Nav Item - Pages Collapse why choose -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsAppointment"
+            aria-expanded="true" aria-controls="collapsAppointment">
+            <i class="fas fa-fw fa-box"></i>
+            <span>Appointment</span>
+        </a>
+        <div id="collapsAppointment" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.appointment.index') }}">Show all</a>
             </div>
         </div>
     </li>
@@ -95,7 +107,7 @@
             </div>
         </div>
     </li>
-    
+
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
