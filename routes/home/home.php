@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Home\ContactController;
 use App\Http\Controllers\Home\MedicalController;
 use App\Http\Controllers\Home\AppointmentController;
 
@@ -18,4 +19,5 @@ use App\Http\Controllers\Home\AppointmentController;
 
 Route::get('/',[MedicalController::class, 'index'])->name('index');
 
-Route::post('/Appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
+Route::post('/appointment/store',[AppointmentController::class,'store'])->name('appointment.store');
+Route::post('/contact/store',[ContactController::class,'store'])->name('contact.store');

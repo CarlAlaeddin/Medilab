@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\AppointmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WhyUsController;
 use App\Http\Controllers\Admin\DoctorController;
+use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\WhyChooseController;
 use App\Http\Controllers\Admin\DepartmentController;
-use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\AppointmentController;
 use App\Http\Controllers\Admin\PositionDoctorController;
 
 /*
@@ -138,5 +139,17 @@ Route::prefix('/admin-panel/management')
                 Route::get('/show/{appointment}', 'show')->name('show');
                 Route::get('/is_active/{appointment}', 'is_active')->name('is_active');
                 Route::delete('/destroy/{appointment}', 'destroy')->name('destroy');
+            });
+
+        #________ This root belongs to the department model
+        Route::prefix('/contact')
+            ->name('contact.')
+            ->controller(ContactController::class)
+            ->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::get('/show/{contact}', 'show')->name('show');
+                Route::put('/update/{contact}', 'update')->name('update');
+                Route::delete('/destroy/{contact}', 'destroy')->name('destroy');
             });
     });
