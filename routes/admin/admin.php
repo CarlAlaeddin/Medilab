@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\WhyUsController;
 use App\Http\Controllers\Admin\DoctorController;
 use App\Http\Controllers\Admin\ContactController;
@@ -114,6 +115,19 @@ Route::prefix('/admin-panel/management')
                 Route::get('/edit/{positionDoctor}', 'edit')->name('edit');
                 Route::put('/update/{positionDoctor}', 'update')->name('update');
                 Route::delete('/destroy/{positionDoctor}', 'destroy')->name('destroy');
+            });
+        #________ This root belongs to the department model
+        Route::prefix('/faq')
+            ->name('faq.')
+            ->controller(FaqController::class)
+            ->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::post('/store', 'store')->name('store');
+                Route::get('/show/{faq}', 'show')->name('show');
+                Route::get('/edit/{faq}', 'edit')->name('edit');
+                Route::put('/update/{faq}', 'update')->name('update');
+                Route::delete('/destroy/{faq}', 'destroy')->name('destroy');
             });
 
         #________ This root belongs to the department model
