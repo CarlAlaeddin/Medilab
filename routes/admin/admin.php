@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AppointmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\WhyUsController;
 use App\Http\Controllers\Admin\DoctorController;
@@ -111,5 +112,16 @@ Route::prefix('/admin-panel/management')
                 Route::get('/edit/{positionDoctor}', 'edit')->name('edit');
                 Route::put('/update/{positionDoctor}', 'update')->name('update');
                 Route::delete('/destroy/{positionDoctor}', 'destroy')->name('destroy');
+            });
+        #________ This root belongs to the department model
+        Route::prefix('/appointment')
+            ->name('appointment.')
+            ->controller(AppointmentController::class)
+            ->group(function () {
+                Route::get('/', 'index')->name('index');
+                Route::get('/create', 'create')->name('create');
+                Route::get('/show/{appointment}', 'show')->name('show');
+                Route::get('/is_active/{appointment}', 'is_active')->name('is_active');
+                Route::delete('/destroy/{appointment}', 'destroy')->name('destroy');
             });
     });
