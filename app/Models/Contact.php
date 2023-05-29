@@ -11,4 +11,17 @@ class Contact extends Model
 
     protected $table = 'contact_us';
 
+    protected $fillable = [
+        'name', 'email', 'subject', 'message', 'is_active'
+    ];
+
+    /**
+     * Summary of getIsActiveAttribute
+     * @param mixed $is_active
+     * @return string
+     */
+    public function getIsActiveAttribute($is_active): string
+    {
+        return $is_active ? 'Active' : 'DeActive';
+    }
 }

@@ -66,4 +66,24 @@ class ContactController extends Controller
         #___________________________________ Redirect to index method
         return redirect()->route('admin.contact.index');
     }
+
+    public function is_active(Contact $contact)
+    {
+        if ($contact->getRawOriginal('is_active') == 1) {
+            $contact->update([
+                'is_active' => 0
+            ]);
+            #___________________________________ Alert success
+            Alert::warning('success report', 'The contact is now cancelled');
+        } else {
+            $contact->update([
+                'is_active' => 1
+            ]);
+            #___________________________________ Alert success
+            Alert::warning('success report', 'The contact is currently standing');
+        }
+
+        #___________________________________ Redirect to index method
+        return redirect()->route('admin.contact.index');
+    }
 }

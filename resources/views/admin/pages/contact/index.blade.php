@@ -21,6 +21,7 @@
                     <td>name</td>
                     <td>email</td>
                     <td>subject</td>
+                    <td>Status</td>
                     <td>Actions</td>
                 </tr>
             </thead>
@@ -32,6 +33,11 @@
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
                     <td>{{ $item->subject }}</td>
+                    <td>
+                        <a  href="{{ route('admin.contact.is_active', ['contact' => $item->id]) }}" class="{{ $item->getRawOriginal('is_active') ? 'text-success' : 'text-danger' }}">
+                            {{ $item->is_active }}
+                        </a>
+                    </td>
                     <td>
                         <div class="dropdown">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"

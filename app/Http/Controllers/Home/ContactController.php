@@ -16,6 +16,7 @@ class ContactController extends Controller
             'email'     =>  $contactRequest->input('email'),
             'subject'   =>  $contactRequest->input('subject'),
             'message'   =>  $contactRequest->input('message'),
+            'is_active' =>  0
         ]);
 
         #___________________________________ Alert success
