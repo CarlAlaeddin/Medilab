@@ -165,5 +165,6 @@ Route::prefix('/admin-panel/management')
                 Route::get('/show/{contact}', 'show')->name('show');
                 Route::put('/update/{contact}', 'update')->name('update');
                 Route::delete('/destroy/{contact}', 'destroy')->name('destroy');
+                Route::get('/is_active/{contact}', 'is_active')->name('is_active');
             });
     });
