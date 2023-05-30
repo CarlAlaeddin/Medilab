@@ -27,7 +27,23 @@ use App\Http\Controllers\Admin\ProfileController;
 */
 
 #________ This root belongs to the dashboard
-Route::get('/admin-panel/dashboard', [DashboardController::class, 'index'])->middleware(['auth'])->name('dashboard');
+Route::prefix('/admin-panel')->middleware(['auth'])->group(function () {
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    #________ This root belongs to the department model
+    Route::prefix('/profile')
+        ->name('profile.')
+        ->controller(ProfileController::class)
+        ->group(function () {
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/', 'show')->name('show');
+            Route::get('/edit', 'edit')->name('edit');
+            Route::put('/update/{profile}', 'update')->name('update');
+            Route::delete('/destroy/{profile}', 'destroy')->name('destroy');
+        });
+});
+
 
 Route::prefix('/admin-panel/management')
     ->name('admin.')
@@ -173,18 +189,5 @@ Route::prefix('/admin-panel/management')
                 Route::put('/update/{contact}', 'update')->name('update');
                 Route::delete('/destroy/{contact}', 'destroy')->name('destroy');
                 Route::get('/is_active/{contact}', 'is_active')->name('is_active');
-            });
-
-        #________ This root belongs to the department model
-        Route::prefix('/profile')
-            ->name('profile.')
-            ->controller(ProfileController::class)
-            ->group(function () {
-                Route::get('/create', 'create')->name('create');
-                Route::post('/store', 'store')->name('store');
-                Route::get('/', 'show')->name('show');
-                Route::get('/edit', 'edit')->name('edit');
-                Route::put('/update/{profile}', 'update')->name('update');
-                Route::delete('/destroy/{profile}', 'destroy')->name('destroy');
             });
     });
