@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,6 +18,7 @@ class DashboardController extends Controller
         $doctorCount        = Doctor::query()->count();
         $departmentCount    = Department::query()->count();
         $appointmentCount   = Appointment::query()->count();
-        return view('admin.index',compact(['contactCount','doctorCount','departmentCount','appointmentCount']));
+        $users              = User::all();
+        return view('admin.index',compact(['contactCount','doctorCount','departmentCount','appointmentCount','users']));
     }
 }
