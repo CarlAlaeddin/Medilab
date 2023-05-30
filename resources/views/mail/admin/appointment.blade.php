@@ -1,12 +1,8 @@
 <x-mail::message>
-# Introduction
+# َAppointment
 
-The body of your message.
+Your appointment has been registered and if confirmed, an email will be sent to you
 
-<x-mail::button :url="''">
-Button Text
-</x-mail::button>
-
-Thanks,<br>
+Thanks<br>
 {{ config('app.name') }}
 </x-mail::message>

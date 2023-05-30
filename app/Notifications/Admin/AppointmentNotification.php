@@ -6,27 +6,30 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use JetBrains\PhpStorm\ArrayShape;
 
 class AppointmentNotification extends Notification
 {
     use Queueable;
 
+    public mixed $appointment;
+
     /**
      * Create a new notification instance.
      */
-    public function __construct()
+    public function __construct($appointment)
     {
-        //
+        $this->appointment = $appointment;
     }
 
+
     /**
-     * Get the notification's delivery channels.
-     *
-     * @return array<int, string>
+     * @param object $notifiable
+     * @return string[]
      */
     public function via(object $notifiable): array
     {
-        return ['mail'];
+        return ['mail','database'];
     }
 
     /**
@@ -34,7 +37,8 @@ class AppointmentNotification extends Notification
      */
     public function toMail(object $notifiable): MailMessage
     {
-        return (new MailMessage)->markdown('mail.admin.appointment');
+
+        return (new MailMessage)->markdown('mail.admin.appointment',['appointment' => $this->appointment]);
     }
 
     /**
@@ -42,10 +46,12 @@ class AppointmentNotification extends Notification
      *
      * @return array<string, mixed>
      */
+    #[ArrayShape(['name' => "", 'created_at' => ""])]
     public function toArray(object $notifiable): array
     {
         return [
-            //
+            'name'          =>   $this->appointment->name,
+            'created_at'    =>  $this->appointment->created_at
         ];
     }
 }

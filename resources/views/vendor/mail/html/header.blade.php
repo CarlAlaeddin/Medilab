@@ -2,11 +2,7 @@
 <tr>
     <td class="header">
         <a href="{{ $url }}" style="display: inline-block;">
-            @if (trim($slot) === 'Laravel')
-                {{ __('Medical') }}
-            @else
-                {{ $slot }}
-            @endif
+            {{ __('Medical') }}
         </a>
     </td>
 </tr>
