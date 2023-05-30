@@ -6,7 +6,7 @@ A Laravel project for a medical site, including the management panel and the use
 [Other projects](https://github.com/CarlAlaeddin)
 _____
 # Home Page
-[Home Theme Bootstrapmade theme Medilab](https://bootstrapmade.com/demo/Medilab/)
+[Home Theme Bootstrapmade - Medilab](https://bootstrapmade.com/demo/Medilab/)
 ![HomePage](public/2023-05-29.png "Home Page")
 ____
 
